@@ -36,16 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns'      => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            [
-                'headerOptions' => ['width' => 120],
-                'options'       => ['style' => 'width:120px'],
-                'attribute'     => 'image',
-                'format'        => 'html',
-                'value'         => function ($model) {
-                    return Html::img($model->image, ['class' => 'admin-grid-image']);
-                },
-                'filter'        => false
-            ],
             'email:email',
             [
                 'attribute' => 'status',

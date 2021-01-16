@@ -11,22 +11,12 @@ use yii\widgets\ActiveForm;
 /* @var $rolesItems array */
 /* @var $userRole */
 
-$options = ImageHelper::getOptionsSingle($model, $model->image);
-
 ?>
 
 <div class="user-form">
 
     <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['enctype' => 'multipart/form-data']]); ?>
     <div class="row">
-        <div class="col-xs-3">
-            <?= FileInput::widget([
-                'options'       => ['accept' => 'image/*'],
-                'name'          => 'User[image]',
-                'value'         => $model->image,
-                'pluginOptions' => $options
-            ]); ?>
-        </div>
         <div class="col-xs-6">
             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
@@ -39,13 +29,15 @@ $options = ImageHelper::getOptionsSingle($model, $model->image);
             <?= $form->field($model, 'status')->dropDownList(User::getStatuses()) ?>
 
             <?= $form->field($model, 'last_name') ?>
+            <?= $form->field($model, 'first_name') ?>
+            <?= $form->field($model, 'phone') ?>
+            <?= $form->field($model, 'address') ?>
 
             <div class="form-group">
                 <?= Html::label('Роль', 'userRole', ['class' => 'control-label']) ?>
                 <?= Html::dropDownList('userRole', $userRole, $rolesItems, ['class' => 'form-control', 'id' => 'userRole']) ?>
             </div>
 
-            <?= $form->field($model, 'position') ?>
         </div>
     </div>
     <div class="form-group">

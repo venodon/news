@@ -3,7 +3,6 @@
 namespace modules\users\controllers;
 
 use common\models\user;
-use modules\config\models\Config;
 use modules\users\models\UserSearch;
 use Yii;
 use yii\base\Exception;
@@ -13,7 +12,6 @@ use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
-use yii\web\UploadedFile;
 
 /**
  * UserController implements the CRUD actions for user model.

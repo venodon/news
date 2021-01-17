@@ -29,7 +29,6 @@ use yii\widgets\ActiveForm;
                 'options'       => ['placeholder' => 'Теги', 'multiple' => true],
                 'pluginOptions' => [
                     'allowClear'         => true,
-                    'tags'               => true,
                     'tokenSeparators'    => [';'],
                     'maximumInputLength' => 255
                 ],

@@ -32,6 +32,7 @@ class NewsCategory extends ActiveRecord
     {
         return [
             [['news_id', 'category_id'], 'integer'],
+            [['news_id', 'category_id'], 'unique', 'targetAttribute' => ['news_id', 'category_id']],
             [['news_id'], 'exist', 'skipOnError' => true, 'targetClass' => News::className(), 'targetAttribute' => ['news_id' => 'id']],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
         ];

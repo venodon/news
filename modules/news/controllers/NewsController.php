@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 /**
  * DefaultController implements the CRUD actions for News model.
  */
-class DefaultController extends Controller
+class NewsController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -125,7 +125,7 @@ class DefaultController extends Controller
                 return $this->redirect(['index']);
             }
         }
-        $categories = ArrayHelper::map(Category::find()->all(), 'id', 'name');
+        $categories = ArrayHelper::map(Category::find()->where(['>', 'depth', 0])->all(), 'id', 'name');
         return $this->render('update', [
             'model' => $model,
             'categories' => $categories,

@@ -22,7 +22,7 @@ return [
     'basePath'            => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap'           => ['log'],
-    'defaultRoute'        => 'news',
+    'defaultRoute'        => 'news/news',
     'modules'             => [
         'users' => [
             'class' => Users::class,

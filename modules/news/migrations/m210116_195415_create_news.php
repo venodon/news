@@ -17,16 +17,15 @@ class m210116_195415_create_news extends Migration
         $this->createTable('news', [
             'id'   => $this->primaryKey()->unsigned(),
             'name' => $this->string(),
-            'slug' => $this->string(),
             'text' => $this->text(),
         ]);
 
         $this->createTable('category', [
-            'id'   => $this->primaryKey()->unsigned(),
-            'name' => $this->string(),
-            'lft'             => $this->integer(),
-            'rgt'             => $this->integer(),
-            'depth'           => $this->integer(),
+            'id'    => $this->primaryKey()->unsigned(),
+            'name'  => $this->string(),
+            'lft'   => $this->integer(),
+            'rgt'   => $this->integer(),
+            'depth' => $this->integer(),
         ]);
         $this->createIndex('lft', 'category', ['lft', 'rgt']);
 
@@ -41,11 +40,11 @@ class m210116_195415_create_news extends Migration
         // модули
         $this->insert('module', ['name' => 'news', 'title' => 'Новости', 'icon' => 'book']);
         $id = $this->db->createCommand("SELECT id FROM module WHERE name='news' AND parent_id IS NULL")->queryScalar();
-        $blogModules = [
+        $newsModules = [
             ['category', 'Категории', $id, 'list'],
             ['news', 'Новости', $id, 'file-text'],
         ];
-        $this->batchInsert('module', ['name', 'title', 'parent_id', 'icon'], $blogModules);
+        $this->batchInsert('module', ['name', 'title', 'parent_id', 'icon'], $newsModules);
 
 
         // разрешения

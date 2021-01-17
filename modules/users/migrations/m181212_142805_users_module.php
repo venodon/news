@@ -35,7 +35,7 @@ class m181212_142805_users_module extends Migration
 
         // создаем админского пользователя
         $userAdmin = new User([
-            'email'    => 'venodon@gmail.com',
+            'email'    => 'admin',
             'status'   => User::STATUS_ACTIVE,
             'role'     => 'admin'
         ]);

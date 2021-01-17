@@ -101,6 +101,6 @@ class Category extends ActiveRecord
      */
     public static function getList()
     {
-        return ArrayHelper::map(self::find()->where(['>', 'depth', 0])->all(), 'id', 'name');
+        return ArrayHelper::map(self::find()->all(), 'id', 'name');
     }
 }

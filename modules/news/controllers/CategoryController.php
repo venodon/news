@@ -136,7 +136,7 @@ class CategoryController extends Controller
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
-        if (!$model->getDescendants() && !$model->news) {
+        if (!$model->getDescendants()->all() && !$model->news) {
             $model->delete();
         } else {
             Yii::$app->session->setFlash('error', 'Ошибка при удалении. В категории есть новости или дочернии категории');

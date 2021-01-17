@@ -40,9 +40,9 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName'  => false,
             'rules'           => [
-                'category/<id:[0-9]+>/<depth:[0-9]+>' => 'site/category',
-                'category/<id:[0-9]+>' => 'site/category',
-                ''                    => 'site/index',
+                '<id:[0-9]+>/<depth:[0-9]+>' => 'site/category',
+                '<id:[0-9]+>'                => 'site/category',
+                ''                           => 'site/index',
             ],
         ],
     ],

@@ -8,7 +8,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel modules\news\models\CategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Категории';
+$this->title = 'Категории (Тут только добавление и иерархия, привязка к новости на странице редактирования новостей)';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="category-index">
